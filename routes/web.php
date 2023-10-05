@@ -19,7 +19,7 @@ Route::get('/', function () {
     if(app()->isLocal()) {
         Auth()->loginUsingId(1);
 
-        return view('dashboard');
+        return to_route('dashboard');
     }
 
     return view('welcome');
