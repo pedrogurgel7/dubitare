@@ -14,7 +14,7 @@
             </button>
         </x-form>
 
-        <x-form :action="route('question.like', $question)"  >
+        <x-form :action="route('question.unlike', $question)"  >
             <button class="flex items-start space-x-2 ">
                 <x-icon.thumbs-down class="h-5 w-5 text-red-700 hover:text-red-500 cursor-pointer"/>
                 <span>{{$question->unlikes}}</span>
