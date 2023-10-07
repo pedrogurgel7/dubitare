@@ -1,0 +1,75 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#7289
+    [34mall[39m: [
+      [34;4mApp\Models\Question[39;24m {#7291
+        [34mid[39m: [35m1[39m,
+        [34mquestion[39m: "[32mOh, how I wish you could draw treacle out of.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7292
+        [34mid[39m: [35m2[39m,
+        [34mquestion[39m: "[32mSo Alice got up in her life before, and she.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m1[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7293
+        [34mid[39m: [35m3[39m,
+        [34mquestion[39m: "[32mAlice quite jumped; but she had hurt the poor.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7294
+        [34mid[39m: [35m4[39m,
+        [34mquestion[39m: "[32mAlice looked at Alice. 'It goes on, you know,'.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m1[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7295
+        [34mid[39m: [35m5[39m,
+        [34mquestion[39m: "[32mThe Mock Turtle recovered his voice, and, with.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m1[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7296
+        [34mid[39m: [35m6[39m,
+        [34mquestion[39m: "[32mKing, 'or I'll have you executed.' The miserable.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m1[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7297
+        [34mid[39m: [35m7[39m,
+        [34mquestion[39m: "[32mGryphon repeated impatiently: 'it begins "I.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7298
+        [34mid[39m: [35m8[39m,
+        [34mquestion[39m: "[32mSo they began moving about again, and said.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m1[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7299
+        [34mid[39m: [35m9[39m,
+        [34mquestion[39m: "[32mOURS they had settled down in a shrill, loud.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Question[39;24m {#7300
+        [34mid[39m: [35m10[39m,
+        [34mquestion[39m: "[32mBill had left off quarrelling with the glass.[39m",
+        [34mcreated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mupdated_at[39m: "[32m2023-10-07 16:24:14[39m",
+        [34mdraft[39m: [35m0[39m,
+      },
+    ],
+  }
+

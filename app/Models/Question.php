@@ -10,7 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Question extends Model
 {
     use HasFactory;
-
+    // protected $casts = [
+    //     'draft' => 'boolean',
+    // ];
     /** @return HasMany<Vote> */
     public function votes(): HasMany
     {
@@ -18,16 +20,16 @@ class Question extends Model
     }
 
     /** @return Attribute*/
-    public function likes(): Attribute
-    {
+    // public function likes(): Attribute
+    // {
 
-        return new Attribute(get: fn () => $this->votes->sum('like'));
-    }
+    //     return new Attribute(get: fn () => $this->votes->sum('like'));
+    // }
 
-    /** @return Attribute*/
-    public function unlikes(): Attribute
-    {
+    // /** @return Attribute*/
+    // public function unlikes(): Attribute
+    // {
 
-        return new Attribute(get: fn () => $this->votes->sum('unlike'));
-    }
+    //     return new Attribute(get: fn () => $this->votes->sum('unlike'));
+    // }
 }
