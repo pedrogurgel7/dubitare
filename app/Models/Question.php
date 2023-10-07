@@ -10,9 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Question extends Model
 {
     use HasFactory;
-    // protected $casts = [
-    //     'draft' => 'boolean',
-    // ];
+
+    protected $casts = [
+        'draft' => 'boolean',
+    ];
     /** @return HasMany<Vote> */
     public function votes(): HasMany
     {
