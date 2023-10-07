@@ -10,6 +10,8 @@ class PublishController extends Controller
 {
     public function __invoke(Question $question): RedirectResponse
     {
+        $this->authorize('publish', $question);
+        #abort_unless(auth()->user()->can('publish', $question), \Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
         $question->update(['draft' => false]);
 
         return back();

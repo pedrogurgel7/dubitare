@@ -14,6 +14,7 @@ return new class () extends Migration {
             $table->id();
             $table->text('question');
             $table->timestamps();
+            $table->foreignIdFor(App\Models\User::class, 'created_by');
             $table->boolean('draft')->default(false);
         });
     }
