@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\{ProfileController, QuestionController};
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\{ProfileController, Question, QuestionController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,18 +19,19 @@ Route::get('/', function () {
     if(app()->isLocal()) {
         Auth()->loginUsingId(1);
 
-        return view('dashboard');
+        return to_route('dashboard');
     }
 
     return view('welcome');
 
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', DashboardController::class)->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::post('/question/store', [QuestionController::class, 'store'])->name('question.store');
+
+Route::post('/question/like/{question}', Question\LikeController::class)->name('question.like');
+Route::post('/question/unlike/{question}', Question\UnlikeController::class)->name('question.unlike');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
