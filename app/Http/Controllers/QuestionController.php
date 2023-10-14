@@ -7,12 +7,18 @@ use Illuminate\Http\{RedirectResponse, Request, Response};
 
 class QuestionController extends Controller
 {
+    public function index(): \Illuminate\Contracts\View\View
+    {
+        return view('question.index', [
+            'questions' => auth()->user()->questions,
+        ]);
+    }
     public function store(): RedirectResponse
     {
 
         request()->validate([
-            'created_by' => 'required',
-            'question'   => ['required',
+
+            'question' => ['required',
                 'min:10',
                 new EndWithQuestionMarkRule(),
             ],
@@ -24,6 +30,6 @@ class QuestionController extends Controller
             'draft'    => true,
         ]);
 
-        return to_route('dashboard');
+        return back();
     }
 }
