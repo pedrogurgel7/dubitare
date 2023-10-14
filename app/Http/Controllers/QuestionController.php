@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Rules\EndWithQuestionMarkRule;
-use Illuminate\Http\{RedirectResponse, Request, Response};
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\{Request, Response};
 
 class QuestionController extends Controller
 {
@@ -29,6 +30,21 @@ class QuestionController extends Controller
             'question' => request()->question,
             'draft'    => true,
         ]);
+
+        return back();
+    }
+
+    /**
+     * Summary of destroy
+     * @param \App\Models\Question $question
+     * @return RedirectResponse;
+
+     */
+    public function destroy(\App\Models\Question $question): RedirectResponse
+    {
+        abort_unless(auth()->user()->can('destroy', $question), \Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+
+        $question->delete();
 
         return back();
     }
