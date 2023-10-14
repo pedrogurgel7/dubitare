@@ -2,25 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Question;
 use App\Rules\EndWithQuestionMarkRule;
-use Illuminate\Http\{RedirectResponse, Request, Response};
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\{Request, Response};
 
 class QuestionController extends Controller
 {
+    public function index(): \Illuminate\Contracts\View\View
+    {
+        return view('question.index', [
+            'questions' => auth()->user()->questions,
+        ]);
+    }
     public function store(): RedirectResponse
     {
 
-        Question::query()->create(
-            request()->validate([
-                'question' => ['required',
-                    'min:10',
-                    new EndWithQuestionMarkRule(),
-                ],
+        request()->validate([
 
-            ])
-        );
+            'question' => ['required',
+                'min:10',
+                new EndWithQuestionMarkRule(),
+            ],
 
-        return to_route('dashboard');
+        ]);
+
+        auth()->user()->questions()->create([
+            'question' => request()->question,
+            'draft'    => true,
+        ]);
+
+        return back();
+    }
+
+    /**
+     * Summary of destroy
+     * @param \App\Models\Question $question
+     * @return RedirectResponse;
+
+     */
+    public function destroy(\App\Models\Question $question): RedirectResponse
+    {
+        abort_unless(auth()->user()->can('destroy', $question), \Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+
+        $question->delete();
+
+        return back();
     }
 }
