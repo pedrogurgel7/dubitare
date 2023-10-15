@@ -33,15 +33,30 @@
                     @foreach ($questions->where('draft', true) as $question)
                         <x-table.tr>
                             <x-table.td>{{$question->question}}</x-table.td>
-                            <x-table.td>
+                            <x-table.td >
+                                <div class="flex flex-row">
+                                    <div>
+                                    
+                                        <x-form :action="route('question.publish', $question)" put>
+                                            <x-btn.primary>Publish</x-btn.primary>
+                                        </x-form>
+                                        </div>
+        
+                                       <div>
+                                        <x-form :action="route('question.destroy', $question)" delete>
+                                            <x-btn.primary>Delete</x-btn.primary>
+                                        </x-form>
+                                       </div>
+        
+                                       <div>
+                                        <a href="{{route('question.edit', $question)}}">
+                                            <x-btn.primary>Edit</x-btn.primary>
+                                        </a>
+                                       </div>
+                                </div>
                                 
-                                <x-form :action="route('question.publish', $question)" put>
-                                    <x-btn.primary>Publish</x-btn.primary>
-                                </x-form>
-
-                                <x-form :action="route('question.destroy', $question)" delete>
-                                    <x-btn.primary>Delete</x-btn.primary>
-                                </x-form>
+                                
+                               
 
                             </x-table.td>
                         </x-table.tr>
